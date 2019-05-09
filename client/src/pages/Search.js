@@ -17,12 +17,14 @@ class Search extends React.Component {
     handleSearchClick(event) {
         event.preventDefault();
         //
+        API.searchBooks("Catcher in the Rye")
+
     }
 
     render() {
         return(
             <main>
-              ?
+              <button onClick={this.handleSearchClick}>Search</button>
             </main>
         );
     }

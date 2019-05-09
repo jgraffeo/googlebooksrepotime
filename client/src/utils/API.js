@@ -8,8 +8,12 @@ const APIkey = "AIzaSyB4gMszDeJVDd58TPxOkX5EoAWfzvwPcZE";
 export default { 
   // Gets all search results
 
-  searchBooks: function() {
-    return axios.post("/search", {title : title});
+  searchBooks: function(searchedBook) {
+    // return axios.post("/search", {title : title});
+    axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchedBook}&key=` + APIkey)
+    .then(res => {
+      console.log(res);
+    })
   },
 
   //return saved books 
